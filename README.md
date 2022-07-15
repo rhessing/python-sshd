@@ -1,8 +1,7 @@
 # python-sshd
 A Python image for developing and testing python code with an embedded SSH server to connect to using Visual Studio Code
 
-### Optionally these options can be started:
-- SSH
+The image is based on the latest official python buster image
 
 ## Default SSH user
 The default user for SSH login is python. The user does not have a password set, a public key is required.
