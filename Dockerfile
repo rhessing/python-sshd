@@ -24,15 +24,16 @@ RUN echo "" >> /etc/ssh/sshd_config \
     && echo "ClientAliveInterval 3" >> /etc/ssh/sshd_config \
     && chmod 755 /bin/tini \
     && chmod 755 /usr/local/bin/docker-entrypoint.sh \
-    && mkdir -p /var/data \
-    && addgroup -gid 9876 python \
-    && adduser -uid 9876 -gid 9876 --shell /bin/bash --disabled-password --gecos '' python \
-    && passwd -u python \
-    && mkdir -p /home/python/.ssh \
-    && mkdir -p /home/python/.vscode-server \
-    && chown python:python /home/python/.ssh \
-    && chown python:python /home/python/.vscode-server \
-    && chmod 0700 /home/python/.ssh
+    && mkdir -p /usr/app \
+    && addgroup -gid 9876 dev \
+    && adduser -uid 9876 -gid 9876 --shell /bin/bash --disabled-password --gecos '' dev \
+    && passwd -u dev \
+    && mkdir -p /home/dev/.ssh \
+    && mkdir -p /home/dev/.vscode-server \
+    && chown dev:dev /home/dev/.ssh \
+    && chown dev:dev /home/dev/.vscode-server \
+    && chmod 0700 /home/dev/.ssh \
+    && ln -fsn /home/dev/app /usr/app
 
 # Cleanup
 RUN rm -rf /tmp/* \
