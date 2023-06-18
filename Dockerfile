@@ -1,4 +1,4 @@
-FROM python:buster
+FROM python:bullseye
 MAINTAINER R. Hessing
 
 # Set default timezone to UTC
