@@ -25,8 +25,8 @@ RUN echo "" >> /etc/ssh/sshd_config \
     && chmod 755 /bin/tini \
     && chmod 755 /usr/local/bin/docker-entrypoint.sh \
     && mkdir -p /var/data \
-    && addgroup -gid 1000 python \
-    && adduser -uid 1000 -gid 1000 --shell /bin/bash --disabled-password --gecos '' python \
+    && addgroup -gid 9876 python \
+    && adduser -uid 9876 -gid 9876 --shell /bin/bash --disabled-password --gecos '' python \
     && passwd -u python \
     && mkdir -p /home/python/.ssh \
     && mkdir -p /home/python/.vscode-server \
