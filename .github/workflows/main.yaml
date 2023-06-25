@@ -7,12 +7,14 @@ on:
       - 'README.md'
       - '.gitignore'
       - '.github/**'
+      - 'training-data/**'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
       - 'README.md'
       - '.gitignore'
       - '.github/**'
+      - 'training-data/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
